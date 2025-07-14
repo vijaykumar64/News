@@ -5,7 +5,7 @@ import NewsItems from './NewsItems'; // Make sure this component exists
 const Search = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const query = new URLSearchParams(useLocation().search).get('q'); // Get the search query from URL
+  const query = new URLSearchParams(useLocation().search).get('q'); 
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -20,7 +20,7 @@ const Search = () => {
     if (query) {
       fetchArticles();
     }
-  }, [query]); // Fetch news when the search query changes
+  }, [query]); 
 
   return (
     <div className="container my-3">
