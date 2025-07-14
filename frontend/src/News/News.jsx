@@ -38,8 +38,7 @@ const News = ({ country = 'us', pageSize = 12, category = 'general', setProgress
 
   useEffect(() => {
     fetchArticles();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page, category]); // Refetch when page or category changes
+  }, [page, category]); 
 
   const handlePrevClick = () => {
     if (page > 1) {
@@ -54,7 +53,6 @@ const News = ({ country = 'us', pageSize = 12, category = 'general', setProgress
     }
   };
 
-  // Calculate max pages capped at NewsAPI's 100-result limit
   const maxPages = Math.ceil(Math.min(totalResults, 100) / pageSize);
 
   return (
