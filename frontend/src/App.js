@@ -7,12 +7,11 @@ import LoadingBar from 'react-top-loading-bar';
 import Search from './News/Search';
 
 export default class App extends Component {
-  // Define the state within the class component
+ 
   state = {
     progress: 0
   };
 
-  // Define setProgress method using correct syntax
   setProgress = (progress) => {
     this.setState({ progress: progress });
   };
@@ -25,7 +24,7 @@ export default class App extends Component {
           <LoadingBar color='#f11946' progress={this.state.progress} />
           
           <Routes>
-            {/* Pass setProgress method as a prop to each News component */}
+          
             <Route exact path='/' element={<News setProgress={this.setProgress} country='us' category='general' key="general" />} />
             <Route path="/search" element={<Search />} />
             <Route exact path='/science' element={<News setProgress={this.setProgress} country='us' category='science' key="science" />} />
