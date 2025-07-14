@@ -16,13 +16,13 @@ app.get('/api/news', async (req, res) => {
       params: {
         country: 'us',
         category,
-        page,         // ✅ Add this
-        pageSize,     // ✅ And this
+        page,        
+        pageSize,    
         apiKey: process.env.NEWS_API_KEY,
       },
     });
 
-    res.json(response.data); // This includes articles + totalResults
+    res.json(response.data); 
   } catch (error) {
     console.error('Error fetching news:', error.message);
     res.status(500).json({ error: 'Failed to fetch news' });
