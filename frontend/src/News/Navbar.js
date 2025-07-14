@@ -2,19 +2,19 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 export const Navbar = ({ toggleDarkMode, isDarkMode }) => {
-  const [searchQuery, setSearchQuery] = React.useState(''); // State to store search query
-  const navigate = useNavigate(); // Use navigate hook to navigate to the search results page
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const navigate = useNavigate(); 
 
-  // Handle search query change
+ 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Handle form submission
+  
   const handleSearchSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
     if (searchQuery.trim()) {
-      // Navigate to search results page with query parameter
+     
       navigate(`/search?q=${searchQuery}`);
     }
   };
@@ -24,7 +24,7 @@ export const Navbar = ({ toggleDarkMode, isDarkMode }) => {
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/" activeClassName="active">Home</NavLink>
         
-        {/* Dark/Light Mode Toggle Icon */}
+      
        
 
         <button
